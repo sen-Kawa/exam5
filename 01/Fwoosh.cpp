@@ -5,7 +5,7 @@ Fwoosh* Fwoosh::Clone()
 	return (new Fwoosh(*this));
 }
 
-Fwoosh::Fwoosh()
+Fwoosh::Fwoosh(void)
 {
 	this->name = "Fwoosh";
 	this->effects= "fwooshed";

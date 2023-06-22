@@ -20,6 +20,13 @@ ASpell::ASpell(std::string name, std::string effects) : name(name), effects(effe
 	return ;
 }
 
+ASpell::ASpell()
+{
+	name = "noname";
+	effects = "noeffects";
+	return ;
+}
+
 ASpell::~ASpell()
 {
 	return ;

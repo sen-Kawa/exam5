@@ -12,7 +12,7 @@ class Fwoosh : public ASpell
 	public:
 		Fwoosh* Clone();
 
-		Fwoosh();
+		Fwoosh(void);
 		~Fwoosh();
 };
 
