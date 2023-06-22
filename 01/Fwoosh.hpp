@@ -10,10 +10,10 @@ class Fwoosh : public ASpell
 {
 	private:
 	public:
-		virtual Fwoosh* Clone();
+		Fwoosh* Clone();
 
-		Fwoosh(std::string name, std::string effects);
-		virtual ~Fwoosh();
+		Fwoosh();
+		~Fwoosh();
 };
 
 #endif

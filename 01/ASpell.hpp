@@ -16,6 +16,7 @@ class ASpell
 		void launch(ATarget const& ref) const;
 		virtual ASpell* Clone() = 0;
 
+		ASpell();
 		ASpell(std::string name, std::string effects);
 		virtual ~ASpell();
 };
