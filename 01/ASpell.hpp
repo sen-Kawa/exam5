@@ -1,7 +1,8 @@
 #ifndef ASPELL_HPP
 #define ASPELL_HPP
-
+#pragma once
 #include <ios>
+#include "ATarget.hpp"
 class ATarget;
 class ASpell
 {
@@ -10,9 +11,9 @@ class ASpell
 		std::string name;
 		std::string effects;
 	public:
-		virtual std::string getName() const;
-		virtual std::string getEffects() const;
-		virtual void launch(ATarget const& ref) const;
+		std::string getName() const;
+		std::string getEffects() const;
+		void launch(ATarget const& ref) const;
 		virtual ASpell* Clone() = 0;
 
 		ASpell(std::string name, std::string effects);
