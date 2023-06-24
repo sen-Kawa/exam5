@@ -2,11 +2,13 @@
 
 Fwoosh* Fwoosh::clone()
 {
-	return (new Fwoosh(*this));
+	return (new Fwoosh());
 }
 
 Fwoosh::Fwoosh()
 {
+	name = "Fwoosh";
+	effects = "fwooshed";
 	return ;
 }
 
