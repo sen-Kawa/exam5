@@ -10,6 +10,11 @@ std::string const& ASpell::getEffects() const
 	return (effects);
 }
 
+void ASpell::launch(ATarget const& ref) const
+{
+	ref.getHitBySpell(*this);
+}
+
 ASpell::ASpell()
 {
 	name = "noname";

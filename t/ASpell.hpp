@@ -3,7 +3,9 @@
 #pragma once
 #include <ios>
 #include <iostream>
+#include "ATarget.hpp"
 
+class ATarget;
 class ASpell
 {
 	private:
@@ -17,6 +19,7 @@ class ASpell
 
 		std::string const& getName() const;
 		std::string const& getEffects() const;
+		void launch(ATarget const& ref) const;
 
 		virtual ASpell* clone() const = 0;
 
@@ -24,6 +27,6 @@ class ASpell
 		ASpell(std::string const name, std::string const effects);
 		ASpell(ASpell const& obj);
 		ASpell& operator=(ASpell const& rhs);
-		~ASpell();
+		virtual ~ASpell();
 };
 #endif
