@@ -29,7 +29,7 @@ ATarget::~ATarget()
 
 ATarget::ATarget(ATarget const& obj)
 {
-	*this = obj;
+	type = obj.type;
 	return ;
 }
 
