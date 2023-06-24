@@ -1,9 +1,10 @@
 #ifndef ASPELL_HPP
 #define ASPELL_HPP
-
+#pragma once
 #include <ios>
 #include <iostream>
-
+#include "ATarget.hpp"
+class ATarget;
 class ASpell
 {
 	private:
@@ -23,10 +24,7 @@ class ASpell
 		ASpell(std::string const name, std::string const effects);
 		ASpell(ASpell const& obj);
 		ASpell&	operator=(ASpell const& rhs);
-		~ASpell();
+		virtual ~ASpell();
 
 };
 #endif
-
-		void	setTitle(std::string const& newTitle);
-		void	introduce() const;
