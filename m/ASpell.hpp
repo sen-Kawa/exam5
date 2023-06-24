@@ -4,6 +4,7 @@
 #include <ios>
 #include <iostream>
 #include "ATarget.hpp"
+
 class ATarget;
 class ASpell
 {
@@ -18,6 +19,7 @@ class ASpell
 
 		std::string const&	getName() const;
 		std::string const&	getEffects() const;
+		void	launch(ATarget const& target) const;
 		virtual ASpell* clone() = 0;
 
 		ASpell();
