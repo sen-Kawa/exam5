@@ -2,20 +2,19 @@
 
 void Warlock::learnSpell(ASpell* newSpell)
 {
-	if (spells.count(newSpell->getName()) == 0)
-		spells[newSpell->getName()] = newSpell->clone();
+	spells.learnSpell(newSpell);
 }
 
 void Warlock::forgetSpell(std::string nameSpell)
 {
-	if (spells.count(nameSpell) > 0)
-		spells.erase(nameSpell);
+	spells.forgetSpell(nameSpell);
 }
 
 void Warlock::launchSpell(std::string nameSpell, ATarget& ref)
 {
-	if (spells.count(nameSpell) > 0)
-		spells[nameSpell]->launch(ref);
+	ASpell* spell = spells.createSpell(nameSpell);
+	if (spell != NULL)
+		spell->launch(ref);
 }
 
 std::string const& Warlock::getName() const

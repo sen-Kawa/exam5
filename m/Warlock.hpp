@@ -4,6 +4,7 @@
 #include <ios>
 #include <iostream>
 #include "ASpell.hpp"
+#include "SpellBook.hpp"
 #include <map>
 
 class Warlock
@@ -12,7 +13,7 @@ class Warlock
 
 		std::string name;
 		std::string title;
-		std::map<std::string, ASpell*> spells;
+		SpellBook	spells;
 
 		Warlock();
 		Warlock(Warlock const& obj);
