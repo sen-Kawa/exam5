@@ -18,12 +18,8 @@ void TargetGenerator::forgetTargetType(std::string const& nameTarget)
 ATarget* TargetGenerator::createTarget(std::string const& nameTarget)
 {
 	if (targets.count(nameTarget) > 0)
-	{
-		ATarget* target = targets[nameTarget]->clone();
-		return (target);
-	}
-	else
-		return NULL;
+		return targets[nameTarget]->clone();
+	return NULL;
 }
 
 TargetGenerator::TargetGenerator()
@@ -33,6 +29,13 @@ TargetGenerator::TargetGenerator()
 
 TargetGenerator::~TargetGenerator()
 {
+	std::map<std::string, ATarget*>::iterator it = targets.begin();
+	std::map<std::string, ATarget*>::iterator ite = targets.end();
+	while (it != ite)
+	{
+		delete it->second;
+		it++;
+	}
 	return ;
 }
 

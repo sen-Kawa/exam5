@@ -18,12 +18,8 @@ void SpellBook::forgetSpell(std::string const& nameSpell)
 ASpell* SpellBook::createSpell(std::string const& nameSpell)
 {
 	if (spells.count(nameSpell) > 0)
-	{
-		ASpell* spell = spells[nameSpell]->clone();
-		return (spell);
-	}
-	else
-		return NULL;
+		return spells[nameSpell]->clone();
+	return NULL;
 }
 
 SpellBook::SpellBook()
@@ -33,6 +29,13 @@ SpellBook::SpellBook()
 
 SpellBook::~SpellBook()
 {
+	std::map<std::string, ASpell*>::iterator it = spells.begin();
+	std::map<std::string, ASpell*>::iterator ite = spells.end();
+	while (it != ite)
+	{
+		delete it->second;
+		it++;
+	}
 	return ;
 }
 
