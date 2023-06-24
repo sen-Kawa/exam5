@@ -6,15 +6,17 @@
 #include <map>
 #include "ATarget.hpp"
 #include "ASpell.hpp"
+#include "SpellBook.hpp"
 class ATarget;
 class ASpell;
+class SpellBook;
 class Warlock
 {
 	private:
 
 		std::string name;
 		std::string title;
-		std::map<std::string, ASpell*> spells;
+		SpellBook spells;
 
 		Warlock();
 		Warlock(Warlock const& obj);
