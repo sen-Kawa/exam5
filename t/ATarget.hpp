@@ -24,6 +24,6 @@ class ATarget
 		ATarget(std::string const type);
 		ATarget(ATarget const& obj);
 		ATarget& operator=(ATarget const& rhs);
-		~ATarget();
+		virtual ~ATarget();
 };
 #endif
