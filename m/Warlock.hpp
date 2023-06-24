@@ -3,6 +3,8 @@
 
 #include <ios>
 #include <iostream>
+#include "ASpell.hpp"
+#include <map>
 
 class Warlock
 {
@@ -10,6 +12,7 @@ class Warlock
 
 		std::string name;
 		std::string title;
+		std::map<std::string, ASpell*> spells;
 
 		Warlock();
 		Warlock(Warlock const& obj);
@@ -17,6 +20,9 @@ class Warlock
 
 	public:
 
+		void	learnSpell(ASpell* newSpell);
+		void	forgetSpell(std::string nameSpell);
+		void	launchSpell(std::string nameSpell, ATarget& ref);
 		std::string const&	getName() const;
 		std::string const&	getTitle() const;
 		void	setTitle(std::string const& newTitle);
